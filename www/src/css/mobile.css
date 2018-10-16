@@ -1,0 +1,56 @@
+﻿html{
+    font-size:80px;
+    background-color:aqua;
+    overflow:hidden;
+}
+div{
+    position:absolute;
+    width:9.5rem;
+    height:13rem;
+    border-radius:0.4rem;
+    text-align:center;
+    line-height:10rem;
+    font-size:1.8rem;
+    color:#fff;
+    box-shadow:rgba(0,0,0,0.3)-0.1rem -0.2rem 0.3rem 0.05rem;
+    transition:all 0.7s;
+}
+
+
+
+.web{
+    background-color:#f40;
+}
+.ios{
+    background-color:#560;
+}
+.back{
+    background-color:#3a0;
+}
+.android{
+    background-color:#375ec3;
+}
+.thing{
+    background-color:#580;
+}
+
+cardMove({
+    num: 5,//需要切换的卡片数
+    styleName: "style",//卡片对应的class主名---确保class名独立，且按数字序号排列
+    direction: [1, 1, 1, 1],//上右下左,1触发，0停止
+    side: [
+        { border: -500, border_speed: 50 ,opacity:1 , opacity_speed:500 , end:1000},
+        { border: -500, border_speed: 50 ,opacity:1 , opacity_speed:500 , end:1000},
+        { border: -500, border_speed: 50 ,opacity:1 , opacity_speed:500 , end:1000},
+        { border: -500, border_speed: 50 ,opacity:1 , opacity_speed:500 , end:1000}
+    ],
+    style: {
+        top: [4,2.7,2,1.4,1],//rem布局
+        zindex: [10, 9, 8, 7, 6]
+    },
+    
+    moveTrue: true,//划出后是否还需要填入队列
+    translation2: 1,//加入队列方式，--1：直接出现--2：渐隐出现--3.移动出现
+    width:9.5,//输入卡片宽度
+    //ps：项目需设置rem布局,添加绝对定位,设置class名为主名加数字（1-n）,设置卡片样式
+});
