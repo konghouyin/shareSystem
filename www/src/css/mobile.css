@@ -1,56 +1,367 @@
 ﻿html{
     font-size:80px;
-    background-color:aqua;
+    font-family:libian;
+    height:100%;
+    background-color:#ffae93;
+    background-image:url(../pic/grass.png);
+    background-size:contain;
+    background-position:bottom;
+    background-repeat:no-repeat;
     overflow:hidden;
 }
-div{
+/*背景*/
+.letter,
+.card>div{
+-webkit-transform: translate3d(0,0,0);
+-moz-transform: translate3d(0,0,0);
+-ms-transform: translate3d(0,0,0);
+-o-transform: translate3d(0,0,0);
+transform: translate3d(0,0,0);
+}
+@font-face{
+    font-family:libian;
+    src:url(../libian.ttf) ;
+}
+@font-face{
+    font-family:jianzhi;
+    src:url(../jianzhi.ttf) ;
+}
+@font-face{
+    font-family:an;
+    src:url(../AaDonuts.ttf) ;
+}
+.card>div{
     position:absolute;
     width:9.5rem;
-    height:13rem;
-    border-radius:0.4rem;
-    text-align:center;
-    line-height:10rem;
-    font-size:1.8rem;
-    color:#fff;
-    box-shadow:rgba(0,0,0,0.3)-0.1rem -0.2rem 0.3rem 0.05rem;
-    transition:all 0.7s;
+    height:15rem;
+    border-radius:1.7rem;
+    box-shadow:rgba(0,0,0,0.1)-0.1rem -0.2rem 0.3rem 0.05rem;
+    overflow:hidden;
+}
+.first{
+    background-color:#2d9aca;
+         text-align:center;
 }
 
+.first>.logomain{
+    width:4rem;
+    height:4rem;
+    margin: 1.7rem auto 2rem auto;
+    background-image:url(../pic/logo.png);
+    background-size:100%;
+    background-repeat:no-repeat;
+}
+.first .tittle{
+    font-size:0.8rem;
+}
+.first>.kh{
+    font-size:0.7rem;
+}
+.first>.tip{
+    margin-top:2rem;
+     font-size:0.5rem;
+     color:#fff;
+}
 
 
 .web{
-    background-color:#f40;
-}
-.ios{
-    background-color:#560;
-}
-.back{
-    background-color:#3a0;
-}
-.android{
-    background-color:#375ec3;
-}
-.thing{
-    background-color:#580;
+    background-color:#f3533c;
 }
 
-cardMove({
-    num: 5,//需要切换的卡片数
-    styleName: "style",//卡片对应的class主名---确保class名独立，且按数字序号排列
-    direction: [1, 1, 1, 1],//上右下左,1触发，0停止
-    side: [
-        { border: -500, border_speed: 50 ,opacity:1 , opacity_speed:500 , end:1000},
-        { border: -500, border_speed: 50 ,opacity:1 , opacity_speed:500 , end:1000},
-        { border: -500, border_speed: 50 ,opacity:1 , opacity_speed:500 , end:1000},
-        { border: -500, border_speed: 50 ,opacity:1 , opacity_speed:500 , end:1000}
-    ],
-    style: {
-        top: [4,2.7,2,1.4,1],//rem布局
-        zindex: [10, 9, 8, 7, 6]
-    },
-    
-    moveTrue: true,//划出后是否还需要填入队列
-    translation2: 1,//加入队列方式，--1：直接出现--2：渐隐出现--3.移动出现
-    width:9.5,//输入卡片宽度
-    //ps：项目需设置rem布局,添加绝对定位,设置class名为主名加数字（1-n）,设置卡片样式
-});
+.ios{
+    background-color:#f4e342;
+}
+
+.back{
+    background-color:#7088f3;
+}
+
+.android{
+    background-color:#31c6ff;
+}
+
+.thing {
+    background-color: #ffc0cb;
+}
+
+/*卡片风格*/
+
+.main{
+    transition:all 1s;
+}
+.main>.shot{
+     margin:1.4rem 0;
+}
+ .main>.shot>p{
+     margin:0.15rem auto;
+     text-align:center;
+     font-size:0.57rem;
+     color:#fff;
+ }
+  .main .tip{
+     font-size:0.5rem;
+     color:#fff;
+     text-align:center;
+ }
+ /*文字介绍*/
+
+ .main .tranform{
+     position:relative;
+     height:8.5rem;
+ }
+
+ .main h3{
+     text-align:center;
+     width:9.5rem;
+     font-size:1rem;
+     color:#fff;
+     position:absolute;
+     margin:0 auto;
+     z-index:3;
+     top:2rem;
+ }
+ .main .circle{
+     position:absolute;
+     left:50%;
+     margin-left:-2.75rem;
+     width:5.5rem;
+     height:5.5rem;
+     background-size:100%;
+     background-repeat:no-repeat;
+
+ }
+ .main .pic2{
+     opacity:0;
+     position:absolute;
+     height:3.5rem;
+     width:3.5rem;
+      background-size:100%;
+     background-repeat:no-repeat;
+     z-index:5;
+     top:3.1rem;
+     left:50%;
+     margin-left:-1.75rem;
+ }
+
+ .main .pic1{
+     opacity:0;
+     height:3.5rem;
+     width:3.5rem;
+     top:1rem;
+     left:50%;
+     z-index:6;
+     margin-left:-1.75rem;
+     position:absolute;
+     background-size:100%;
+     background-repeat:no-repeat;
+     
+ }
+
+ 
+
+ .android .pic1{
+     background-image:url(../pic/android-pic1.png);
+ }
+ .android .pic2{
+     background-image:url(../pic/android-pic2.png);
+ }
+ .ios .pic1{
+     background-image:url(../pic/ios-pic1.png);
+ }
+ .ios .pic2{
+     background-image:url(../pic/ios-pic2.png);
+ }
+ .web .pic1{
+     background-image:url(../pic/web-pic1.png);
+ }
+ .web .pic2{
+     background-image:url(../pic/web-pic2.png);
+ }
+  .back .pic1{
+     background-image:url(../pic/back-pic1.png);
+ }
+ .back .pic2{
+     background-image:url(../pic/back-pic2.png);
+ }
+   .thing .pic1{
+     background-image:url(../pic/thing-pic1.png);
+ }
+ .thing .pic2{
+     background-image:url(../pic/thing-pic2.png);
+ }
+
+
+
+ .android .circle{
+    background-image:url(../pic/backandroid.png);
+}
+ .ios .circle{
+    background-image:url(../pic/backios.png);
+}
+.web .circle{
+    background-image:url(../pic/backweb.png);
+}
+.back .circle{
+    background-image:url(../pic/backback.png);
+}
+.thing .circle{
+    background-image:url(../pic/backthing.png);
+}
+
+ /*动画区域*/
+ .animation_down{
+     -webkit-animation:down 1.5s ease-in-out 0s 1 normal forwards running ;
+ }
+ @-webkit-keyframes down{
+    0% {
+        top:0;  
+    }
+
+    5% {
+        top:0;
+    }
+
+    35% {
+        top:1.9rem;
+    }
+
+    60% {
+        top:1.4rem;
+    }
+
+    85% {
+        top: 1.8rem;
+    }
+
+    100% {
+        top: 1.9rem;
+    }
+ }
+
+ /*圆形下降*/
+ .animation_logo{
+      -webkit-animation:logo 1.2s ease-in-out 0.4s 1 normal forwards running ;
+ }
+@-webkit-keyframes logo {
+    0% {
+       
+        opacity: 0
+    }
+    60%{opacity: 0.5}
+    100% {
+       
+        opacity: 1
+    }
+}
+/*logo渐隐*/
+
+.animation_top{
+      -webkit-animation:top 0.8s ease-out 1s 1 normal forwards running ;
+ }
+@-webkit-keyframes top {
+    0% {
+       -webkit-transform:scale(1,1);
+        opacity: 0
+    }
+    75% {
+        opacity: .4
+    }
+    80% {
+        opacity: .9
+    }
+    100% {
+       -webkit-transform:scale(1.3,1.3);
+        opacity: 1
+    }
+}
+/*pic2效果*/
+ 
+.animation_up{
+      -webkit-animation:up 0.6s ease-in-out 0s 1 normal forwards running ;
+ }
+@-webkit-keyframes up{
+    from{top:2rem}
+    to{top:0}
+}
+/*文字上移*/
+
+.animation_shake1{
+    -webkit-animation:shake1 2.3s ease-in-out 0s infinite normal none running ;
+    top: 1.9rem;
+}
+
+@-webkit-keyframes shake1{
+    0%{-webkit-transform:scale(1,1);opacity:1 }
+    50%{-webkit-transform:scale(1.08,1.08);opacity:1 }
+    100%{-webkit-transform:scale(1,1);opacity:1 }
+}
+
+.animation_shake2{
+    -webkit-animation:shake2 2.3s ease-in-out 0s infinite normal none running ;
+}
+
+@-webkit-keyframes shake2{
+    0%{-webkit-transform:scale(1.3,1.3);opacity:1 }
+    50%{-webkit-transform:scale(1.1,1.1);opacity:1 }
+    100%{-webkit-transform:scale(1.3,1.3);opacity:1 }
+}
+
+.animation_shake3{
+    -webkit-animation:shake3 2.3s ease-in-out 0s infinite normal none running ;
+    top: 1.9rem;
+}
+
+@-webkit-keyframes shake3{
+    0%{-webkit-transform:scale(1,1);opacity:1 }
+    50%{-webkit-transform:scale(0.85,0.85);opacity:1 }
+    100%{-webkit-transform:scale(1,1);opacity:1 }
+}
+/*图片晃动*/
+
+
+.letter{
+    top:8.5rem;
+    left:50%;
+    margin-left:0;
+    background-color:#fff;
+    position:absolute;
+    z-index:5;
+    border-radius:50%;
+    width:0rem;
+    height:0rem;
+    color:#000;
+    opacity:1;
+    overflow:hidden;
+    transition:all 1.5s ease-in-out;
+}
+.letter2{
+    top:1.1rem;
+    height:12.5rem !important;
+    width:15rem !important;
+    margin-left:-7.5rem !important;
+}
+
+h2{
+    width:7rem;
+    font-size:0.9rem;
+    font-weight:bold;
+    margin:1.5rem 3.5rem  0.5rem 4.7rem;
+}
+.letter .font1{
+    width:7rem;
+    font-size:0.5rem;
+    margin:0.7rem 4rem;
+    line-height:0.57rem;
+}
+.letter .font2{
+     width:7rem;
+    font-size:0.5rem;
+    margin:1rem 4rem;
+    line-height:0.57rem;
+    font-family:jianzhi;
+    font-weight:lighter;
+}
+
+.clear{
+    opacity:0;
+}
