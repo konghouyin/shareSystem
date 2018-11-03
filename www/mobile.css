@@ -1,0 +1,465 @@
+html{
+    font-size:80px;
+    width:100%;
+    height:100%;
+}
+body{
+    height:100%;
+}
+.wrap{
+    background-image:url(./pic/back.png);
+    width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    background-size:100%;
+    background-position:bottom;
+    transition:all 1.5s ease-in-out;
+}
+.first{
+    width:100%;
+    height:100%;
+    box-sizing:border-box;
+    padding:2rem;
+    transition:all 1.2s;
+}
+.first .logo{
+    margin-top:2rem;
+    width:3rem;
+    height:3rem;
+    background-image:url(./pic/logo.png);
+    background-repeat:no-repeat;
+    background-size:100%;
+    margin:0 auto;
+}
+.first-font-style{
+    color:#fff;
+    text-align:center;
+}
+.first .name{
+    margin-top:1rem;
+    font-size:0.9rem;
+}
+.first .tittle{
+    margin-top:3rem;
+    font-size:0.85rem;
+}
+.first .kh{
+    margin-top:0.5rem;
+    font-size:0.65rem;
+}
+.first .button{
+    margin:2rem auto;
+    border:0.05rem solid #fff;
+    border-radius:0.5rem;
+    font-size:0.6rem;
+    height:1rem;
+    width:4rem;
+    line-height:1rem;
+}
+.baoming{
+    display:none;
+    min-height:1rem;
+    background-image:url(./pic/back2.png);
+    width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    background-size:100%;
+    background-position:bottom;
+    box-sizing:border-box;
+    transition:all 0.5s 0.3s;
+    overflow:hidden;
+}
+.baoming .tittle{
+    margin:0.5rem;
+    text-align:center;
+    font-size:0.85rem;
+    color:#0687ff;
+    transition:all 0.5s 0.2s;
+}
+.baoming .tell{
+    z-index:9;
+    margin-right:1.4rem;
+    position:relative;
+    border:0.05rem solid #ccc;
+    width:0.6rem;
+    height:0.6rem;
+    border-radius:50%;
+    text-align:center;
+    float:right;
+}
+.baoming .i{
+    color:#ccc;
+    font-size:0.45rem;
+    line-height:0.6rem;
+}
+.tell .message{
+    position:absolute;
+    right:0.75rem;
+    padding:0.65rem 0.4rem 0.65rem 0.65rem;
+    background-color:#ccc;
+    width:0;
+    color:#fff;
+    border-radius:0.3rem;
+    opacity:0;
+    transition:all 0.7s;
+}
+.message .top{
+    width:7.4rem;
+    font-size:0.6rem;
+    margin:0.2rem;
+}
+.message .mid{
+    width:7.4rem;
+    font-size:0.5rem;
+    line-height:0.6rem;
+    text-align:initial;
+}
+.baoming .input{
+        height: 5.5rem;
+            position:relative;
+}
+.baoming .wrap-input{
+    margin: 1.3rem 1.3rem 0rem 1.3rem;
+    padding:0.7rem;
+    padding-top:0.3rem;
+    border-radius: 0.7rem;
+    transition:all 1s;
+}
+
+.boxshadow{
+    box-shadow:#aaa 0.03rem 0.1rem 1rem 0.12rem !important;
+}
+.position{
+    margin-right: 18rem !important ; 
+    margin-left: -15rem !important ;
+}
+
+.baoming input{
+    padding-left:0.7rem;
+    display:block;
+    margin: 0.5rem auto;
+    width:6rem;
+    height:1.5rem;
+    font-size:0.6rem;
+    outline:none;
+    border:none;
+    border-bottom:0.05rem solid #aaa;  
+    background-color:transparent;
+}
+.baoming .button{
+    position:relative;
+    border-radius:0.75rem;
+    background-color:#0687ff;
+    margin:1rem auto 0.5rem auto;
+    width:7rem;
+    height:1.5rem;
+    font-size:0.7rem;
+    text-align:center;
+    color:#fff;
+    line-height:1.5rem;
+}
+
+.baoming .tip{
+    margin-right:1.3rem;
+    float:right;
+    font-size:0.5rem;
+    text-align:right;
+    color:#aaa;
+    text-decoration:none;
+}
+
+.input .text{
+    display:none;
+    position:absolute;
+    top:3.5rem;
+    left:50%;
+    margin-left:-3rem;
+    font-size:0.6rem;
+    width:6rem;
+    text-align:center;
+    transition:all 0.8s;
+}
+
+.loader {
+  display:none;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  transform:scale(0.5) rotate(142deg);
+  transition:all 0.8s;
+}
+.loader:before, .loader:after {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: -1.9rem;
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  transform: translate(-50%, -50%);
+}
+.loader:before {
+  animation: before 2s infinite;
+}
+.loader:after {
+  animation: after 2s infinite;
+}
+
+@keyframes before {
+  0% {
+    width: 0.5em;
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+  35% {
+    width: 2.5em;
+    box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+  }
+  70% {
+    width: 0.5em;
+    box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+  100% {
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+}
+@keyframes after {
+  0% {
+    height: 0.5em;
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
+  35% {
+    height: 2.5em;
+    box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+  }
+  70% {
+    height: 0.5em;
+    box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+  }
+  100% {
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
+}
+/**
+ * Attempt to center the whole thing!
+ */
+
+.loader {
+  position: absolute;
+  top: calc(50% - 1.25em);
+  left: calc(50% - 1.25em);
+}
+
+    
+
+.button .wrong{
+    font-size: 0.5rem;
+    position: absolute;
+    top: -1.3rem;
+    left: 50%;
+    width: 8rem;
+    margin-left: -4rem;
+    color: #000;
+}
+.wrap-baoming{
+    opacity:1;
+    transition:all 1.5s;
+}
+
+.ticket{
+    position:relative;
+    z-index:10;
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:rgba(0, 0, 0, 0.7);
+}
+.ticket>.top{
+    opacity:0;
+    transition:all 1s;
+    margin-top:0.8rem;
+    text-align:center;
+    z-index:5;
+    position:relative;
+    color:#fff;
+}
+.ticket h2{
+    font-size:0.8rem;
+    margin:0.3rem;
+}
+.ticket h5{
+    font-size:0.5rem;
+    margin:0.1rem;
+}
+.ticket .main{
+    opacity:0;
+    transition:all 1.5s;
+    position:relative;
+    margin:1rem;
+    padding-bottom:0.5rem;
+    border-radius:0.4rem;
+    background-color:#fff;
+}
+.ticket .main::before{
+    content: "";
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgb(76, 76, 76);
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    top: -1.5rem;
+    left: 3.8rem;
+
+}
+
+.ticket .main .pic{
+    background-image: url(./pic/3g=logo.png);
+    width: 3.5rem;
+    height: 2rem;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 0.7rem 0.3rem;
+}
+.ticket .time{
+    float:right;
+    text-align:right;
+    color:#999;
+    padding:0.5rem;
+}
+.ticket .time .top{
+    font-size:0.5rem;
+}
+.ticket .time .bottom{
+    font-size:0.55rem;
+}
+.showpic{
+    background-image: url(./pic/haobao.png);
+    height: 3.5rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.ticket .name{
+    line-height:0.7rem;
+    padding:0.5rem;
+    color:#bbb;
+}
+.ticket .sit{
+    float:right;
+}
+.ticket .sit{
+    font-size:0.5rem;
+}
+.ticket .name .theater{
+    font-size:0.5rem;
+}
+.ticket .name .place{
+    font-size:0.6rem;
+    color:#999;
+}
+.ma{
+    margin: 0 auto;
+    background-image: url(./pic/ma.png);
+    width: 8rem;
+    height: 3rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-clip: content-box;
+    padding: 0.2rem 0.5rem;
+    box-shadow: #bbb 0.1rem 0.1rem 0.3rem;
+    border-radius:0.2rem;
+}
+.ticket .button{
+    opacity:0;
+    transition:all 1.5s;
+    text-align:center;
+}
+
+.ticket .button div{
+    color:#fff;
+    width:2.5rem;
+    height:1rem;
+    display:inline-block;
+    margin:0 1rem;
+    background-size:65%;
+    background-repeat:no-repeat;
+    padding-top:1.8rem;
+    background-position-x:center;
+    font-size:0.8rem;
+}
+.ticket .button .back{
+    background-image:url(./pic/backto.png);
+}
+.ticket .button .more{
+    background-image:url(./pic/more.png);
+}
+body>.wrong{
+    position:absolute;
+    z-index:10;
+    top:0;
+    left:0;
+    display:none;
+    background-color:rgba(0, 0, 0, 0.7);
+    height:100%;
+    width:100%;
+}
+.border .pic{
+    opacity:0;
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background-color: #f40;
+    border-radius: 50%;
+    position: absolute;
+    top: -1rem;
+    left: 3.5rem;
+    background-image:url(./pic/char.png);
+    background-size:64%;
+    background-repeat:no-repeat;
+    background-position:center;
+    transform:scale3d(5,5,5);
+    transition:all 0.5s;
+}
+.border{
+    opacity:0;
+    position:absolute;
+    width:9rem;
+    background-color:#fff;
+    border-radius:0.3rem;
+    text-align:center;
+    left:50%;
+    margin-left:-4.5rem;
+    top:-15rem;
+    transition:all 1.5s;
+}
+
+.border .message{
+    font-size:0.9rem;
+    margin-top:1.4rem;
+}
+.border .thing{
+    font-size:0.6rem;
+    margin:0.5rem 1rem;
+    text-align:initial;
+    line-height:0.7rem;
+}
+.border .button >div{
+    line-height:1rem;
+    width:2.8rem;
+    margin:0.2rem 0.3rem 0.7rem 0.3rem;
+    display:inline-block;
+    border-radius:0.3rem;
+    height:1.1rem;
+    background-color:#f40;
+    font-size:0.7rem;
+    color:#fff;
+}
+.border .button a{
+    text-decoration:none;
+    color:#fff;
+}

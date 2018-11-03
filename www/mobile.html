@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,124 +8,85 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="blank-translucenthttp" />
     <title>3G实验室--就业经验交流会报名</title>
     <link rel="icon" href="./src/pic/favicon.ico" />
-    <link rel="stylesheet" href ="./src/css/reset.css" type="text/css"/>
-    <link rel="stylesheet" href ="./src/css/mobile.css" type="text/css"/>
+    <link rel="stylesheet" href ="./src/reset.css" type="text/css"/>
+    <link rel="stylesheet" href ="./src/mobile.css" type="text/css"/>
 </head>
 <body>
-    <div class="card">
-        <div class="style1 first">
-            <div class="logomain"></div>
-            <div class="tittle">移动应用开发实验室</div>
-            <div class="kh">程序让生活更美好</div>
-            <div class="tip">左右滑动探索更多内容</div>
+    <!--<div class="letter">学号输入有误请输入密码</div>-->
+    <div class="wrap">
+        <div class="first">
+            <div class="logo"></div>
+            <div class="name first-font-style">移动应用开发实验室</div>
+            <div class="tittle first-font-style">技术不止于此</div>
+            <div class="kh first-font-style">--- 就业经验交流会 ---</div>
+            <div class="button first-font-style">立即报名</div>
         </div>
-        <div class="style2 android">
-            <div class="main">
-                <div class="shot">
-                    <p>我们的规模决定了</p>
-                    <p>我们存在的意义</p>
+    </div>
+    <div class="baoming">
+        <div class="wrap-baoming">
+            <div class="tittle" style="margin-top:2rem;">就业经验交流会</div>
+            <div class="tittle" style="font-size:0.8rem">报名通道</div>
+            <div class="tell">
+                <div class="i">i</div>
+                <div class="message">
+                    <div class="top">隐私声明</div>
+                    <div class="mid">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们收集您的学号和教务密码，只作为学生身份的验证，不用于其他用途。我们不会泄露您的个人信息，并于活动结束后，将您的个人信息清除。</div>
                 </div>
-                <div class="tranform">
-                    <h3>Android</h3>
-                    <div class="circle"> <div class="pic1"></div></div>
-                    <div class="pic2"></div>
+            </div>
+            <div class="input"> 
+                <div class="wrap-input">
+                    <input type="text" placeholder="请输入8位学号" value="" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/"/>
+                    <input type="password" placeholder="请输入教务系统密码" value="" />
                 </div>
-                <div class="tip">点击查看详细信息</div>
+                <div class="loader"></div>
+                <div class="text">正在报名，请稍后...</div>
             </div>
-            <div class="letter">
-                <h2>Android</h2>
-                <p class="font1">
-               致力于 Android 移动平台的 APP 开发。组内活跃着学习的气息和交流的热情，是 Google 大学合作部——Android 人才培养示范基地。在这样的环境下，我们努力创造出自己的 APP，取得Google 全国大学生移动互联网创新挑战赛金奖、银奖，爱奇艺全国高校技术大赛最佳创新奖等等。
-                </p>
-                <p class="font2">我们，因共同热爱而聚集，为开发梦想而诞生。</p>
-            </div>
+            <div class="button">
+                <div class="wrong"></div>
+                报  名</div>
+            <a class="tip" href="http://192.168.137.1:8080/help.html">报名异常请联系我们</a>
         </div>
-        <div class="style3 ios">
-            <div class="main">
-                <div class="shot">
-                    <p>我们因i而生</p>
-                    <p>我们与美共存</p>
-                </div>
-                <div class="tranform">
-                    <h3>IOS</h3>
-                    <div class="circle"><div class="pic1"></div></div>
-                    <div class="pic2"></div>
-                </div>
-                <div class="tip">点击查看详细信息</div>
-            </div>
-            <div class="letter">
-                <h2>IOS</h2>
-                <p class="font1">
-               致力基于iOS系统的移动应用开发，主要使用 Objective-C 语言进行开发。有着先进的iOS开发设备，积极活跃的开发团队，团队成员互相合作，共同进步，积极参加各类竞赛。也正因如此，近几年来我们都取得了非常可观的成绩，如今已经有玩转西邮，西邮成绩，西邮图书馆，近健步行等多个APP上线。
-
-                </p>
-                <p class="font2">怀揣着对iOS开发的无限热情，我们将继续努力，共同进步。</p>
-            </div>
+    </div>
+    <div class="ticket">
+        <div class="top">
+            <h2>报名成功</h2>
+            <h5>This will be your ticket to get into the activity</h5>
+            <h5>Your can share it with your friends!</h5>
         </div>
-        <div class="style4 web">
-            <div class="main">
-                <div class="shot">
-                    <p>我们适配万千</p>
-                    <p>用代码改变世界</p>
-                </div>
-                <div class="tranform">
-                    <h3>Web</h3>
-                    <div class="circle"><div class="pic1"></div></div>
-                    <div class="pic2"></div>
-                </div>
-                <div class="tip">点击查看详细信息</div>
+        <div class="main">
+              <div class="time">
+                <div class="top">7:30 PM</div>
+                <div class="bottom">November  13</div>
             </div>
-            <div class="letter">
-                <h2>Web</h2>
-                <p class="font1">致力于基于HTML & CSS & JS & Vue&React 的Web前端开发，以及以Node.js为主的Web后台开发。我们追求最前沿的前端技术，在“斩码”的途中，大家也是互帮互助，披荆斩棘，培养了深厚的友谊。小组内学习氛围浓厚，闲暇时光更是欢乐无比，能让你找到真正的归属感。
-                </p>
-                <p class="font2">性感表现代码，把不可能变成可能。</p>
+            <div class="pic"></div>
+            <div class="showpic"></div>
+            <div class="name">
+                <div class="sit">
+                    <div>SEAT</div>
+                    <div style ="font-size:0.6rem;color:#999;">待定</div>
+                </div>
+                <div class="theater">THEATER</div>
+                <div class="place">东区教学楼FF207</div>
             </div>
+            <div class="ma"></div>
         </div>
-        <div class="style5 back">
-            <div class="main">
-                <div class="shot">
-                    <p>我们架构项目</p>
-                    <p>用语言编制生活</p>
-                </div>
-                <div class="tranform">
-                    <h3>后台</h3>
-                    <div class="circle"><div class="pic1"></div></div>
-                    <div class="pic2"></div>
-                </div>
-                <div class="tip">点击查看详细信息</div>
-            </div>
-            <div class="letter">
-                <h2>后台组</h2>
-                <p class="font1">我们热爱技术，致力于开发出优秀、高性能、安全的Web服务。小组内成员积极讨论，项目合作开发集思广益，与其余小组成员之间互相帮助，你追我敢，积极讨论各种问题，使得我们能够灭霸(bug)而行。
-                </p>
-                <p class="font2">从我们开始，让后端组还有实验室变得更好</p>
-            </div>
+        <div class="button">
+            <div class="back" id="back">back</div>
+            <a href="#"><div class="more">more</div></a>
         </div>
-        <div class="style6 thing">
-            <div class="main">
-                <div class="shot">
-                    <p>我们参与每一个项目</p>
-                    <p>让产品以最好的方式呈现</p>
-                </div>
-                <div class="tranform">
-                    <h3>产品</h3>
-                    <div class="circle"><div class="pic1"></div></div>
-                    <div class="pic2"></div>
-                </div>
-                <div class="tip">点击查看详细信息</div>
-            </div>
-             <div class="letter">
-                <h2>产品组</h2>
-                <p class="font1">自成立以来便一直参与到实验室的每一个项目中，为现有产品提供优化方案；为全新产品进行精心规划。用户调研、竞品分析、功能整合、需求文档、原型输出，这些工作在为编程的同学提供便利的同时，也让更易用，更合理，更注重用户体验。
-                </p>
-                <p class="font2">产品经理，是让项目从0到1的规划者和推动者，让产品更加优秀，是我们永远的目标。</p>
-            </div>
-        </div>
-        <div class="style7 reg"></div>
     </div>
 
-
-    <script src="./src/js/mobile.js"></script>
+    <div class="wrong">
+        <div class="border">
+            <div class="pic"></div>
+            <div class="message">网络错误用户名或密码错误</div>
+            <div class="thing">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您可以返回上级页面，尝试再次报名，或查看报名帮助，以获取相关帮助.</div>
+            <div class="button">
+                <div class="back" id="back1">back</div>
+                <div class="helpthing"><a href="http://192.168.137.1:8080/help.html">help</a></div>
+            </div>
+       </div>
+    </div>
+    <script src="./src/mobile.js"></script>
 </body>
 </html>
