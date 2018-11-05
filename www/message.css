@@ -1,0 +1,154 @@
+
+@font-face{
+    font-family:jianzhi;
+    src:url(./xikaii.ttf);
+}
+
+html{
+    font-size:80px;
+    background-color:#ccc;
+}
+.wrap{
+    width:100%;
+    z-index:3;
+    position:fixed;
+    top:0;
+    height:1.7rem;
+    background-color:#2f3430;
+    color:#fff;
+    text-align:center;
+    line-height:1.7rem;
+    text-shadow: 4px 4px 16px #ddd;
+}
+.list>div{
+    box-shadow: 0.05rem 0.16rem 0.9rem 0.001rem #666;
+    margin:0.7rem 0.7rem;
+    background-color:#fff;
+    border-radius:0.3rem;
+    background-repeat:no-repeat;
+    background-size:100%;
+    padding-bottom:0.4rem;
+}
+.list .card7 .pic,
+.list .card1 .pic{
+    margin:0 0 0 0.3rem;
+    position:absolute;
+    height: 3.5rem;
+    width: 3.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 64%;
+}
+.list .pic{
+    margin: 0.6rem 0 0 1rem;
+    border-radius: 50%;
+    position:absolute;
+    height: 2.2rem;
+    width: 2.2rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 64%;
+}
+.list .name::before{
+    content: "点击卡片查看更多信息";
+    display:block;
+    height:0.5rem;
+    position: absolute;
+    font-size: 0.45rem;
+    color: #eee;
+    top: 1rem;
+    left: 2.5rem;
+}
+.list .name{
+    height:3rem;
+    position:relative;
+    text-align:center;
+    font-size:0.9rem;
+    color:#fff;
+    line-height:3.3rem;
+    margin-left:3.5rem;
+}
+.list .kh{
+    position:relative;
+    font-size: 0.6rem;
+    padding: 0.7rem 0.5rem 0.5rem 1.8rem;
+    line-height:0.75rem;
+    text-align:center;
+}
+.list .i{
+    position: absolute;
+    width: 0.65rem;
+    height: 0.65rem;
+    border: 0.05rem solid #ccc;
+    border-radius: 50%;
+    top: 0.75rem;
+    left: 0.6rem;
+}
+.list .i::before{
+    content:"i";
+    padding:0.26rem;
+    color:#ccc;
+}
+.list .bottom{
+    width: 0.8rem;
+    height: 0.1rem;
+    background-color: #ddd;
+    border-radius: 0.05rem;
+    margin: 0rem auto;
+}
+
+
+.card7,
+.card1{
+    background-image:url(./pic/card1.png);
+}.card2{
+    background-image:url(./pic/card2.png);
+}.card3{
+    background-image:url(./pic/card3.png);
+}.card4{
+    background-image:url(./pic/card4.png);
+}.card5{
+    background-image:url(./pic/card5.png);
+}.card6{
+    background-image:url(./pic/card6.png);
+}
+.card7 .pic,
+.card1 .pic{
+    background-image:url(./pic/logo.png);
+}
+.card2 .pic{
+    background-color:#59d208;
+    background-image:url(./pic/android-pic1.png);
+}
+.card3 .pic{
+    background-color:#3eb9c0;
+    background-image:url(./pic/ios-pic1.png);
+}
+.card4 .pic{
+    background-color:#62acff;
+    background-image:url(./pic/web-pic1.png);
+}
+.card5 .pic{
+    background-color:#9e9c99;
+    background-image:url(./pic/back-pic1.png);
+}
+.card6 .pic{
+    background-color:#9fe3e4;
+    background-image:url(./pic/thing-pic1.png);
+}
+
+.asd p{
+    margin-top:0.5rem;
+    font-family:jianzhi;
+    color:#999;
+    font-weight:100;
+}
+.asd{
+    /*height: 0; 
+    overflow: hidden;*/ 
+    padding: 1rem 0.8rem 0 0.8rem;
+    font-size: 0.55rem;
+    line-height:0.6rem;
+    color:#666;
+}
+

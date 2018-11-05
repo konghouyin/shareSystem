@@ -96,7 +96,7 @@ body{
     position:absolute;
     right:0.75rem;
     padding:0.65rem 0.4rem 0.65rem 0.65rem;
-    background-color:#ccc;
+    background-color:#aaa;
     width:0;
     color:#fff;
     border-radius:0.3rem;
@@ -298,10 +298,11 @@ body{
     opacity:0;
     transition:all 1.5s;
     position:relative;
-    margin:1rem;
     padding-bottom:0.5rem;
     border-radius:0.4rem;
     background-color:#fff;
+    transform:scale(0.9);
+    margin:0.2rem 0.5rem;
 }
 .ticket .main::before{
     content: "";
@@ -312,7 +313,7 @@ body{
     position: absolute;
     border-radius: 50%;
     top: -1.5rem;
-    left: 3.8rem;
+    left: 4.5rem;
 
 }
 
@@ -327,14 +328,14 @@ body{
 .ticket .time{
     float:right;
     text-align:right;
-    color:#999;
+    color:#888;
     padding:0.5rem;
 }
 .ticket .time .top{
-    font-size:0.5rem;
+    font-size:0.55rem;
 }
 .ticket .time .bottom{
-    font-size:0.55rem;
+    font-size:0.6rem;
 }
 .showpic{
     background-image: url(./pic/haobao.png);
@@ -357,13 +358,13 @@ body{
     font-size:0.5rem;
 }
 .ticket .name .place{
-    font-size:0.6rem;
-    color:#999;
+    font-size:0.65rem;
+    color:#777;
 }
 .ma{
     margin: 0 auto;
     background-image: url(./pic/ma.png);
-    width: 8rem;
+    width: 8.5rem;
     height: 3rem;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -422,7 +423,7 @@ body>.wrong{
     background-size:64%;
     background-repeat:no-repeat;
     background-position:center;
-    transform:scale3d(5,5,5);
+    transform:scale3d(3,3,3);
     transition:all 0.5s;
 }
 .border{
@@ -435,7 +436,7 @@ body>.wrong{
     left:50%;
     margin-left:-4.5rem;
     top:-15rem;
-    transition:all 1.5s;
+    transition:all 0.5s;
 }
 
 .border .message{

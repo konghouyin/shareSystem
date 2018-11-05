@@ -171,7 +171,7 @@ function Ajax(object) {
             wrong.children[0].children[0].style.opacity = "1";
             wrong.children[0].children[0].style.transform = "scale3d(1,1,1)";
 
-        }, 1000)
+        }, 400)
     }
 
 
@@ -181,7 +181,7 @@ function Ajax(object) {
             var wrong = document.getElementsByClassName('wrong')[1];
             wrong.style.display = "block";
             setTimeout(function (message) {
-                wrong.children[0].children[1].innerHTML = "用户名或密码错误";
+                wrong.children[0].children[1].innerHTML = "网络错误";
                 var back = document.getElementsByClassName('wrap-baoming')[0];
                 back.style.opacity = "0";
                 wrong.children[0].style.opacity = "1";
@@ -232,5 +232,5 @@ back1.addEventListener('click', function () {
     wrong.children[0].style.opacity = "0";
     wrong.children[0].style.top = "-15rem";
     wrong.children[0].children[0].style.opacity = "0";
-    wrong.children[0].children[0].style.transform = "scale3d(5,5,5)";
+    wrong.children[0].children[0].style.transform = "scale3d(3,3,3)";
 })
