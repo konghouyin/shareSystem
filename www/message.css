@@ -96,7 +96,25 @@ html{
     border-radius: 0.05rem;
     margin: 0rem auto;
 }
-
+.card1 .asd{
+    height:9rem;
+}
+.card3 .asd{
+    height:7rem;
+}
+.card4 .asd{
+    height:7.1rem;
+}
+.card5 .asd{
+    height:5.5rem;
+}
+.card2 .asd,
+.card6 .asd{
+    height:6.5rem;
+}
+.card7 .asd{
+    height:5rem;
+}
 
 .card7,
 .card1{
@@ -144,11 +162,11 @@ html{
     font-weight:100;
 }
 .asd{
-    /*height: 0; 
-    overflow: hidden;*/ 
+    overflow: hidden; 
     padding: 1rem 0.8rem 0 0.8rem;
     font-size: 0.55rem;
     line-height:0.6rem;
     color:#666;
+    transition:all 1s;
 }
 
