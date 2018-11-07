@@ -61,12 +61,12 @@ body{
     min-height:1rem;
     background-image:url(./pic/back2.png);
     width:100%;
-    height:100%;
+    height:0;
     background-repeat:no-repeat;
     background-size:100%;
     background-position:bottom;
     box-sizing:border-box;
-    transition:all 0.5s 0.3s;
+    transition:all 1.5s ease-in-out;
     overflow:hidden;
 }
 .baoming .tittle{
@@ -280,7 +280,7 @@ body{
 .ticket>.top{
     opacity:0;
     transition:all 1s;
-    margin-top:0.8rem;
+    margin-top:1.5rem;
     text-align:center;
     z-index:5;
     position:relative;
@@ -326,6 +326,7 @@ body{
     background-position: 0.7rem 0.3rem;
 }
 .ticket .time{
+           width:5rem;
     float:right;
     text-align:right;
     color:#888;
@@ -363,16 +364,17 @@ body{
 }
 .ma{
     margin: 0 auto;
-    background-image: url(./pic/ma.png);
+    background-position: center;
+    background-image: url(./pic/erweim.png);
     width: 8.5rem;
     height: 3rem;
-    background-size: 100%;
+    background-size: 87%;
     background-repeat: no-repeat;
     box-sizing: border-box;
     background-clip: content-box;
-    padding: 0.2rem 0.5rem;
+    padding: 0.5rem 0.5rem;
     box-shadow: #bbb 0.1rem 0.1rem 0.3rem;
-    border-radius:0.2rem;
+    border-radius: 0.2rem;
 }
 .ticket .button{
     opacity:0;
@@ -381,23 +383,20 @@ body{
 }
 
 .ticket .button div{
-    color:#fff;
-    width:2.5rem;
-    height:1rem;
-    display:inline-block;
-    margin:0 1rem;
-    background-size:65%;
-    background-repeat:no-repeat;
-    padding-top:1.8rem;
-    background-position-x:center;
-    font-size:0.8rem;
+    color: #fff;
+    width: 4rem;
+    height: 1.1rem;
+    display: inline-block;
+    margin: 0 0.3rem;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    border: 0.065rem solid #fff;
+    border-radius: 0.25rem;
+    background-position-x: center;
+    font-size: 0.55rem;
+    line-height: 1.1rem;
 }
-.ticket .button .back{
-    background-image:url(./pic/backto.png);
-}
-.ticket .button .more{
-    background-image:url(./pic/more.png);
-}
+
 body>.wrong{
     position:absolute;
     z-index:10;

@@ -8,6 +8,9 @@ var list = document.getElementsByClassName("list")[0];
 list.addEventListener("webkitAnimationEnd", function () {
     list.classList.remove("updown");
 });
+document.addEventListener("touchmove", function (e) {
+    e.preventDefault();
+}, false);//��ֹҳ�滬��
 
 var flag = 0;//判断首次触发
 var page = -1;//防止点击相同卡片

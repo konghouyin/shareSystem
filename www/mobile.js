@@ -3,6 +3,13 @@ var input = document.getElementsByTagName('input');
 var button = document.getElementsByClassName('button')[0];
 var box = document.getElementsByClassName('baoming')[0];
 
+
+
+
+document.addEventListener("touchmove", function (e) {
+    e.preventDefault();
+}, false);//禁止页面滑动
+
 button.addEventListener('click', function () {  
     var first = document.getElementsByClassName('first')[0];
     first.style.opacity = "0";
@@ -105,7 +112,9 @@ function Ajax(object) {
             var status = xhr.status;
             if (status >= 200 && status < 300) {
                 var person = JSON.parse(xhr.response);
-                if (person.code == 0 || person.code == -4) {
+                if (person.code == 0) {
+                    var message = document.getElementById("wing");
+                    message.innerHTML = "报名成功";
                     var success = document.getElementsByClassName('ticket')[0];
                     success.style.display = "block";
                     setTimeout(function () {
@@ -120,7 +129,24 @@ function Ajax(object) {
                     setTimeout(function () {
                         success.children[2].style.opacity = "1";
                     }, 1600)
-
+                } else if (person.code == -4){
+                    var message = document.getElementById("wing");
+                    message.innerHTML = "已报名";
+                    var success = document.getElementsByClassName('ticket')[0];
+                    success.style.display = "block";
+                    setTimeout(function() {
+                        var back = document.getElementsByClassName('wrap-baoming')[0];
+                        back.style.opacity = "0";
+                        success.children[0].style.opacity = "1";
+                    }, 200)
+                    setTimeout(function() {
+                        reset();
+                        success.children[1].style.opacity = "1";
+                    }, 800)
+                    setTimeout(function() {
+                        success.children[2].style.opacity = "1";
+                    }, 1600)
+               
                 } else if (person.code == -2) {
                     wrong("学号或密码错误");
                     

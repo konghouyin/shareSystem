@@ -1,12 +1,8 @@
 
-@font-face{
-    font-family:jianzhi;
-    src:url(./xikaii.ttf);
-}
 
 html{
     font-size:80px;
-    background-color:#ccc;
+    background-color:rgb(230,230,230);
 }
 .wrap{
     width:100%;
@@ -20,8 +16,10 @@ html{
     line-height:1.7rem;
     text-shadow: 4px 4px 16px #ddd;
 }
+
+
 .list>div{
-    box-shadow: 0.05rem 0.16rem 0.9rem 0.001rem #666;
+   cursor:pointer;
     margin:0.7rem 0.7rem;
     background-color:#fff;
     border-radius:0.3rem;
@@ -57,16 +55,14 @@ html{
     font-size: 0.45rem;
     color: #eee;
     top: 1rem;
-    left: 2.5rem;
 }
 .list .name{
     height:3rem;
     position:relative;
-    text-align:center;
     font-size:0.9rem;
     color:#fff;
     line-height:3.3rem;
-    margin-left:3.5rem;
+    margin-left:3.7rem;
 }
 .list .kh{
     position:relative;
@@ -99,8 +95,9 @@ html{
 .card1 .asd{
     height:9rem;
 }
+.card2 .asd,
 .card3 .asd{
-    height:7rem;
+    height:7.3rem;
 }
 .card4 .asd{
     height:7.1rem;
@@ -108,12 +105,12 @@ html{
 .card5 .asd{
     height:5.5rem;
 }
-.card2 .asd,
+
 .card6 .asd{
     height:6.5rem;
 }
 .card7 .asd{
-    height:5rem;
+    height:5.5rem;
 }
 
 .card7,
@@ -135,7 +132,7 @@ html{
     background-image:url(./pic/logo.png);
 }
 .card2 .pic{
-    background-color:#59d208;
+    background-color:rgb(89,210,8);
     background-image:url(./pic/android-pic1.png);
 }
 .card3 .pic{
@@ -147,18 +144,18 @@ html{
     background-image:url(./pic/web-pic1.png);
 }
 .card5 .pic{
-    background-color:#9e9c99;
+    background-color:rgb(166,191,186);
     background-image:url(./pic/back-pic1.png);
 }
 .card6 .pic{
-    background-color:#9fe3e4;
+    background-color:rgb(255,111,111);
     background-image:url(./pic/thing-pic1.png);
 }
 
 .asd p{
     margin-top:0.5rem;
-    font-family:jianzhi;
-    color:#999;
+
+    color:#777777;
     font-weight:100;
 }
 .asd{
@@ -170,3 +167,9 @@ html{
     transition:all 1s;
 }
 
+.thing{
+    color:#555555;
+}
+.kh{
+    color:#333333;
+}
