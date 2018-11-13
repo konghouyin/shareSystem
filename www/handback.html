@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>就业经验交流会--后台实时数据</title>
+        <meta charset="gbk">
+        <script>
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://join.xiyoumobile.com/signup/user",true);
+            xhr.setRequestHeader("Authorization","Basic eGl5b3UzZzp4aXlvdTNnZnoxNTUqKi8v")
+            xhr.send(null);
+
+
+            function toDecimal2(x) { 
+               var f = parseFloat(x); 
+               if (isNaN(f)) { 
+                return false; 
+               } 
+               var f = Math.round(x*100)/100; 
+               var s = f.toString(); 
+               var rs = s.indexOf('.'); 
+               if (rs < 0) { 
+                rs = s.length; 
+                s += '.'; 
+               } 
+               while (s.length <= rs + 2) { 
+                s += '0'; 
+               } 
+               return s; 
+              } 
+
+            //绘制饼图
+            function drawCircle(canvasId, data_arr, color_arr, text_arr)
+            {
+                var c = document.getElementById(canvasId);
+                var ctx = c.getContext("2d");
+ 
+                var radius = c.height / 2 - 20; //半径
+                var ox = radius + 20, oy = radius + 20; //圆心
+ 
+                var width = 30, height = 10; //图例宽和高
+                var posX = ox * 2 + 20, posY = 30;   //
+                var textX = posX + width + 5, textY = posY + 10;
+ 
+                var startAngle = 0; //起始弧度
+                var endAngle = 0;   //结束弧度
+                for (var i = 0; i < data_arr.length; i++)
+                {
+                    //绘制饼图
+                    endAngle = endAngle + data_arr[i] * Math.PI * 2; //结束弧度
+                    ctx.fillStyle = color_arr[i];
+                    ctx.beginPath();
+                    ctx.moveTo(ox, oy); //移动到到圆心
+                    ctx.arc(ox, oy, radius, startAngle, endAngle, false);
+                    ctx.closePath();
+                    ctx.fill();
+                    startAngle = endAngle; //设置起始弧度
+ 
+                    //绘制比例图及文字
+                    ctx.fillStyle = color_arr[i];
+                    ctx.fillRect(posX, posY + 20 * i, width, height);
+                    ctx.moveTo(posX, posY + 20 * i);
+                    ctx.font = 'bold 12px 微软雅黑';    //斜体 30像素 微软雅黑字体
+                    ctx.fillStyle = color_arr[i]; //"#000000";
+                    var percent = text_arr[i] + "：" + toDecimal2(100 * data_arr[i]) + "%";
+                    ctx.fillText(percent, textX, textY + 20 * i);
+                }
+            }
+ 
+            function init() {
+                //绘制饼图
+                //比例数据和颜色
+
+                var color_yuan = ["#FFAA00", "#00AABB", "#FF4400"];
+                var text_yuan = ["计算机学院", "通信工程学院", "其它"];
+ 
+                //drawCircle("canvas_yuan", data_arr, color_arr, text_arr);
+            }
+
+            function list(arrColor,arrName,arrNum) {
+                this.color = arrColor;
+                this.name = arrName;
+                this.num = arrNum;
+            }
+
+
+ 
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    var all = JSON.parse(xhr.response).data;
+                    var length = all.length;
+                    var status = xhr.status;
+                    console.log(all);
+                    var sex = new list(["#FFAA00", "#00AABB"], ["男", "女"], [0, 0]);
+                    var yuan = new list(["#FFAA00", "#00AABB", "#FF4400"], ["计算机学院", "通信工程学院", "其它"], [0, 0, 0]);
+                    var zhuan = new list(["#FFAA00", "#00AABB", "#FF4400", "#178ef8"], ["软件", "计科", "网络", "大数据"], [0, 0, 0, 0]);
+                    var grand = new list(["#FFAA00", "#00AABB", "#FF4400", "#178ef8"], ["大一", "大二", "大三", "大四"], [0, 0, 0, 0]);
+                    var jlength = 0;
+                    if (status >= 200 && status < 300) {
+                        for (thing in all) {
+                            if (all[thing].sid.match(/\b04/g) != null) {
+                                yuan.num[0]++;
+                            }
+                            if (all[thing].sid.match(/\b03/g) != null) {
+                                yuan.num[1]++;
+                            }
+                            if (all[thing].sex == "男") {
+                                sex.num[0]++;
+                            } else {
+                                sex.num[1]++;
+                            }
+                            if (all[thing].clazz.match(/软/g) != null) {
+                                zhuan.num[0]++;
+                                jlength++;
+                            }
+                            if (all[thing].clazz.match(/计/g) != null) {
+                                zhuan.num[1]++;
+                                jlength++;
+                            }
+                             if (all[thing].clazz.match(/网/g) != null) {
+                                 zhuan.num[2]++;
+                                 jlength++;
+                            }
+                             if (all[thing].clazz.match(/大/g) != null) {
+                                 zhuan.num[3]++;
+                                 jlength++;
+                            }
+                            var nj = all[thing].sid.substr(2, 2);
+                            if (nj == "18") {
+                                grand.num[0]++;
+                            } else if (nj == "17") {
+                                grand.num[1]++;
+                            } else if (nj == "16") {
+                                grand.num[2]++;
+                            } else {
+                                grand.num[3]++;
+                            }
+                        }
+                        yuan.num[2] = length - yuan.num[1] - yuan.num[0];
+                        drawCircle("canvas_yuan", [yuan.num[0]/length,yuan.num[1]/length,yuan.num[2]/length], yuan.color,yuan.name );
+                        drawCircle("canvas_sex", [sex.num[0] / length, sex.num[1] / length], sex.color, sex.name);
+                        drawCircle("canvas_zhuan", [zhuan.num[0]/jlength,zhuan.num[1]/jlength,zhuan.num[2]/jlength,zhuan.num[3]/jlength], zhuan.color,zhuan.name );
+                        drawCircle("canvas_grand", [grand.num[0]/length,grand.num[1]/length,grand.num[2]/length,grand.num[3]/length], grand.color,grand.name );
+
+                        for (thing in all) {
+                            
+                        }
+                        
+
+
+                    }else{
+                        alert("网络错误！");
+                    }
+                }
+            }
+            window.onload = init;
+        </script>
+    </head>
+    <body>
+        <div class="yuan">
+            <h3>学院分布</h3>
+            <p>
+                <canvas id="canvas_yuan" width="500" height="300" style="border:2px solid #0026ff;" >
+                    浏览器不支持canvas
+                </canvas>
+            </p>
+        </div>
+        <div class="zhuan">
+            <h3>计算机学院专业分布</h3>
+            <p>
+                <canvas id="canvas_zhuan" width="500" height="300" style="border:2px solid #0026ff;" >
+                    浏览器不支持canvas
+                </canvas>
+            </p>
+        </div>
+        <div class="sex">
+            <h3>男女分布</h3>
+            <p>
+                <canvas id="canvas_sex" width="500" height="300" style="border:2px solid #0026ff;" >
+                    浏览器不支持canvas
+                </canvas>
+            </p>
+        </div>
+        <div class="grand">
+            <h3>年级分布</h3>
+            <p>
+                <canvas id="canvas_grand" width="500" height="300" style="border:2px solid #0026ff;" >
+                    浏览器不支持canvas
+                </canvas>
+            </p>
+        </div>
+    </body>
+</html>
